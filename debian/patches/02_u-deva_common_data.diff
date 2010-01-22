@@ -5,9 +5,8 @@
 ## DP: No description.
 
 @DPATCH@
-diff -urNad aspell~/Makefile.am aspell/Makefile.am
---- aspell~/Makefile.am	2006-01-02 16:17:58.000000000 -0500
-+++ aspell/Makefile.am	2006-01-02 16:19:07.000000000 -0500
+--- a/Makefile.am
++++ b/Makefile.am
 @@ -376,7 +376,8 @@
    data/iso-8859-16.cmap data/iso-8859-16.cset \
    data/koi8-r.cmap data/koi8-r.cset \
@@ -18,9 +17,8 @@ diff -urNad aspell~/Makefile.am aspell/Makefile.am
  
  EXTRA_DIST += config.rpath  README ${pkgdata_DATA} m4/*.m4 \
                misc/po-filter.c
-diff -urNad aspell~/data/u-deva.cmap aspell/data/u-deva.cmap
---- aspell~/data/u-deva.cmap	1969-12-31 19:00:00.000000000 -0500
-+++ aspell/data/u-deva.cmap	2006-01-02 16:18:22.000000000 -0500
+--- /dev/null
++++ b/data/u-deva.cmap
 @@ -0,0 +1,1362 @@
 +INTERNAL
 +/
@@ -1384,9 +1382,8 @@ diff -urNad aspell~/data/u-deva.cmap aspell/data/u-deva.cmap
 +EF > 096F
 +F0 > 0970
 +.
-diff -urNad aspell~/data/u-deva.cset aspell/data/u-deva.cset
---- aspell~/data/u-deva.cset	1969-12-31 19:00:00.000000000 -0500
-+++ aspell/data/u-deva.cset	2006-01-02 16:18:27.000000000 -0500
+--- /dev/null
++++ b/data/u-deva.cset
 @@ -0,0 +1,262 @@
 +# Aspell Character Data File.
 += u-deva

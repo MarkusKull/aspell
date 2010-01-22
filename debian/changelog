@@ -1,3 +1,17 @@
+aspell (0.60.6-3) unstable; urgency=low
+
+  * Switched to dpkg-source 3.0 (quilt) format
+
+  * No longer use dpatch
+
+  * Cleared the dependency_libs= lines in the .la files
+
+  * Bumped Standards-Version to 3.8.3, no changes necessary
+
+  * Added a debian/watch file
+
+ -- Brian Nelson <pyro@debian.org>  Thu, 21 Jan 2010 20:05:20 -0800
+
 aspell (0.60.6-2) unstable; urgency=low
 
   * Applied a patch from Christer Andersson <klamm@comhem.se> to add a

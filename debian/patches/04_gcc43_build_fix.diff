@@ -5,9 +5,8 @@
 ## DP: Fix for GCC 4.3 builds as reported in #452310
 
 @DPATCH@
-diff -urNad aspell-0.60.6~/common/string_map.hpp aspell-0.60.6/common/string_map.hpp
---- aspell-0.60.6~/common/string_map.hpp	2004-08-04 03:52:31.000000000 -0400
-+++ aspell-0.60.6/common/string_map.hpp	2008-06-24 14:36:26.000000000 -0400
+--- a/common/string_map.hpp
++++ b/common/string_map.hpp
 @@ -11,7 +11,7 @@
  #include "parm_string.hpp"
  #include "posib_err.hpp"
@@ -17,9 +16,8 @@ diff -urNad aspell-0.60.6~/common/string_map.hpp aspell-0.60.6/common/string_map
  #include "objstack.hpp"
  
  
-diff -urNad aspell-0.60.6~/modules/speller/default/affix.hpp aspell-0.60.6/modules/speller/default/affix.hpp
---- aspell-0.60.6~/modules/speller/default/affix.hpp	2008-06-22 23:56:43.000000000 -0400
-+++ aspell-0.60.6/modules/speller/default/affix.hpp	2008-06-24 14:36:26.000000000 -0400
+--- a/modules/speller/default/affix.hpp
++++ b/modules/speller/default/affix.hpp
 @@ -109,7 +109,7 @@
      }
      WordAff * expand_suffix(ParmString word, const unsigned char * aff,

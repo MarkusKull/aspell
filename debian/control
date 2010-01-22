@@ -2,8 +2,8 @@ Source: aspell
 Section: text
 Priority: optional
 Maintainer: Brian Nelson <pyro@debian.org>
-Build-Depends: debhelper (>= 7), libncursesw5-dev | libncurses-dev, cdbs (>= 0.4.0), dpatch, texinfo
-Standards-Version: 3.8.2
+Build-Depends: debhelper (>= 7), libncursesw5-dev | libncurses-dev, cdbs (>= 0.4.0), texinfo
+Standards-Version: 3.8.3
 Homepage: http://aspell.net/
 
 Package: aspell

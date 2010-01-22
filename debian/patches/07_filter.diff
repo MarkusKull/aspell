@@ -6,8 +6,8 @@
 
 @DPATCH@
 
---- aspell-0.60.5.orig/gen/filter.pot
-+++ aspell-0.60.5/gen/filter.pot
+--- a/gen/filter.pot
++++ b/gen/filter.pot
 @@ -13,6 +13,10 @@
  msgid "swaps visible and invisible text"
  msgstr ""
@@ -30,4 +30,3 @@
  #: modules/filter/modes/email.amf:5
  msgid "mode for skipping quoted text in email messages"
  msgstr ""
-

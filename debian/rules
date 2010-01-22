@@ -2,7 +2,7 @@
 
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
-include /usr/share/cdbs/1/rules/dpatch.mk
+#include /usr/share/cdbs/1/rules/patchsys-quilt.mk
 
 DEB_DH_MAKESHLIBS_ARGS_ALL := -V'libaspell15 (>= 0.60)' -Xusr/lib/aspell
 
@@ -27,5 +27,12 @@ binary-install/libaspell15::
 	rm -f debian/libaspell15/usr/lib/aspell/spell \
 	      debian/libaspell15/usr/lib/aspell/ispell
 
-# Hack to fix dpatch-edit-patch
-unpatch: deapply-dpatches
+# Empty the dependency_libs lines in the .la files
+	sed -i "s,^dependency_libs=.*,dependency_libs=''," \
+	   debian/libaspell15/usr/lib/aspell/*.la
+
+binary-install/libaspell-dev::
+binary-install/libpspell-dev::
+	sed -i "s,^dependency_libs=.*,dependency_libs=''," \
+	   debian/libaspell-dev/usr/lib/*.la \
+	   debian/libpspell-dev/usr/lib/*.la
