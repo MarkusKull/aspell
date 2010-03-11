@@ -3,7 +3,7 @@ Section: text
 Priority: optional
 Maintainer: Brian Nelson <pyro@debian.org>
 Build-Depends: debhelper (>= 7), libncursesw5-dev | libncurses-dev, cdbs (>= 0.4.0), texinfo
-Standards-Version: 3.8.3
+Standards-Version: 3.8.4
 Homepage: http://aspell.net/
 
 Package: aspell

@@ -1,10 +1,6 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 02_u-deva_common_data.dpatch by Brian Nelson <pyro@debian.org>
+## 02_u-deva_common_data.diff by Brian Nelson <pyro@debian.org>
 ##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: No description.
-
-@DPATCH@
+## 
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -376,7 +376,8 @@

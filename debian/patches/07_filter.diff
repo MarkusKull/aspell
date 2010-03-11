@@ -1,10 +1,6 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 07_filter.dpatch by Michael Meskes <meskes@debian.org>
+## 07_filter.diff by Michael Meskes <meskes@debian.org>
 ##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: Add Debian related stuff to filter.pot
-
-@DPATCH@
+## Add Debian related stuff to filter.pot
 
 --- a/gen/filter.pot
 +++ b/gen/filter.pot

@@ -1,10 +1,6 @@
-#! /bin/sh /usr/share/dpatch/dpatch-run
-## 03_ddtp_filter.dpatch by Christer Andersson <klamm@comhem.se>
+## 03_ddtp_filter.diff by Christer Andersson <klamm@comhem.se>
 ##
-## All lines beginning with `## DP:' are a description of the patch.
-## DP: Filter for Debian DDTP-emails
-
-@DPATCH@
+## Filter for Debian DDTP-emails
 --- a/Makefile.am
 +++ b/Makefile.am
 @@ -161,7 +161,8 @@

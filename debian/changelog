@@ -1,3 +1,18 @@
+aspell (0.60.6-4) unstable; urgency=low
+
+  * Bumped Standards-Version to 3.8.4, no changes necessary
+
+  * Document output format "-" for run-together in pipe mode, thanks Jörg
+    Sommer <joerg@alea.gnuu.de> for the patch. (Closes: #499570)
+
+  * Cleaned up patch headers to remove obsolete dpatch stuff
+
+  * Updated debian/compat to v7
+
+  * Added a manpage for prezip/preunzip/precat.
+
+ -- Brian Nelson <pyro@debian.org>  Wed, 10 Mar 2010 21:18:01 -0500
+
 aspell (0.60.6-3) unstable; urgency=low
 
   * Switched to dpkg-source 3.0 (quilt) format

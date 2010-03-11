@@ -3,3 +3,4 @@ manual/run-with-aspell.1
 manual/word-list-compress.1
 manual/aspell-import.1
 manual/prezip-bin.1
+debian/prezip.1
