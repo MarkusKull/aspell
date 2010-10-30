@@ -7,5 +7,3 @@ usr/bin/prezip
 usr/bin/preunzip
 usr/bin/precat
 usr/share/locale
-usr/lib/aspell/spell    usr/share/doc/aspell/examples
-usr/lib/aspell/ispell   usr/share/doc/aspell/examples

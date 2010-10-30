@@ -8,7 +8,7 @@ DEB_DH_MAKESHLIBS_ARGS_ALL := -V'libaspell15 (>= 0.60)' -Xusr/lib/aspell
 
 DEB_DH_INSTALL_SOURCEDIR := debian/tmp
 DEB_INSTALL_CHANGELOGS_ALL := manual/aspell.html/ChangeLog.html
-DEB_CONFIGURE_EXTRA_FLAGS := --enable-pkgdatadir=/usr/lib/aspell --enable-pkglibdir=/usr/lib/aspell
+DEB_CONFIGURE_EXTRA_FLAGS := --enable-pkgdatadir=/usr/share/aspell --enable-pkglibdir=/usr/lib/aspell
 
 build/aspell-doc::
 	make -C manual aspell.html aspell-dev.html
@@ -22,11 +22,6 @@ install/aspell-doc::
 	dh_install --sourcedir=manual -paspell-doc aspell-dev.html usr/share/doc/aspell-doc/
 
 binary-install/libaspell15::
-# The spell and ispell compatibility scripts don't belong in
-# /usr/lib/aspell, dammit.
-	rm -f debian/libaspell15/usr/lib/aspell/spell \
-	      debian/libaspell15/usr/lib/aspell/ispell
-
 # Empty the dependency_libs lines in the .la files
 	sed -i "s,^dependency_libs=.*,dependency_libs=''," \
 	   debian/libaspell15/usr/lib/aspell/*.la

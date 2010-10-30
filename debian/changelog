@@ -1,3 +1,20 @@
+aspell (0.60.6-5) UNRELEASED; urgency=low
+
+  * Added a grammatical fix for aspell.1 to 05_doc_fix.diff
+    (Closes: #576749)
+
+  * debian/control: added Vcs fields for git repository
+
+  * Added new patch 06_null_input_segfault_fix.diff
+    (Closes: #596642)
+
+  * debian/rules: changed pkgdatadir to /usr/share/aspell which is a more
+    appropriate location for that data than /usr/lib/aspell, and leave the
+    spell and ispell scripts there so that run-with-aspell works
+    (Closes: #599653)
+
+ -- Brian Nelson <pyro@debian.org>  Fri, 29 Oct 2010 20:52:47 -0700
+
 aspell (0.60.6-4) unstable; urgency=low
 
   * Bumped Standards-Version to 3.8.4, no changes necessary
