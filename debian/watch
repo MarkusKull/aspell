@@ -1,2 +1,2 @@
 version=3
-ftp://ftp.gnu.org/gnu/aspell/aspell-(.*)\.tar\.gz
+ftp://ftp.gnu.org/gnu/aspell/aspell-([\d\.*]+)\.tar\.gz

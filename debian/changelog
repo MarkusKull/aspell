@@ -1,4 +1,4 @@
-aspell (0.60.6-5) UNRELEASED; urgency=low
+aspell (0.60.6-5) unstable; urgency=low
 
   * Added a grammatical fix for aspell.1 to 05_doc_fix.diff
     (Closes: #576749)
@@ -11,8 +11,9 @@ aspell (0.60.6-5) UNRELEASED; urgency=low
     (Closes: #599653)
   * Updated to policy version 3.9.1
     - Converted some "Conflicts:" to "Breaks:"
+  * debian/watch: corrected to not match bogus .tar.gz files
 
- -- Brian Nelson <pyro@debian.org>  Fri, 04 Feb 2011 11:15:53 -0500
+ -- Brian Nelson <pyro@debian.org>  Fri, 04 Feb 2011 12:00:55 -0500
 
 aspell (0.60.6-4) unstable; urgency=low
 
