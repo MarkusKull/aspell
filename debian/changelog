@@ -9,6 +9,8 @@ aspell (0.60.6-5) unstable; urgency=low
     appropriate location for that data than /usr/lib/aspell, and leave the
     spell and ispell scripts there so that run-with-aspell works
     (Closes: #599653)
+  * Added new patch 11_special_chars.diff from Ubuntu to support German
+    umlauts (Closes: #591355)
   * Updated to policy version 3.9.1
     - Converted some "Conflicts:" to "Breaks:"
   * debian/watch: corrected to not match bogus .tar.gz files
