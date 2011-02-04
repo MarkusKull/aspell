@@ -3,7 +3,7 @@ Section: text
 Priority: optional
 Maintainer: Brian Nelson <pyro@debian.org>
 Build-Depends: debhelper (>= 7), libncursesw5-dev | libncurses-dev, cdbs (>= 0.4.0), texinfo
-Standards-Version: 3.8.4
+Standards-Version: 3.9.1
 Vcs-Git: git://git.debian.org/git/collab-maint/aspell
 Vcs-Browser: http://git.debian.org/?p=collab-maint/aspell.git
 Homepage: http://aspell.net/
@@ -13,7 +13,7 @@ Architecture: any
 Depends: ${shlibs:Depends}, ${misc:Depends}, libaspell15 (= ${binary:Version}), dictionaries-common (>> 0.40)
 Recommends: aspell-en | aspell-dictionary | aspell6a-dictionary
 Suggests: aspell-doc, spellutils
-Conflicts: aspell-bin (<< 0.60.3-2)
+Breaks: aspell-bin (<< 0.60.3-2)
 Replaces: aspell-bin (<< 0.60.3-2), aspell-hi (<= 0.01-1), aspell-mr (<= 0.10-1)
 Provides: aspell-bin
 Description: GNU Aspell spell-checker
@@ -43,7 +43,8 @@ Package: libaspell15
 Architecture: any
 Section: libs
 Depends: ${shlibs:Depends}, ${misc:Depends}
-Conflicts: aspell6-dictionary, aspell-bin (<< 0.60.3-2)
+Conflicts: aspell6-dictionary
+Breaks: aspell-bin (<< 0.60.3-2)
 Recommends: aspell-en | aspell-dictionary | aspell6a-dictionary
 Suggests: aspell
 Description: GNU Aspell spell-checker runtime library
