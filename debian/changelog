@@ -1,3 +1,10 @@
+aspell (0.60.6-6) UNRELEASED; urgency=low
+
+  * Removed the debian-changes-0.60.6-5 patch which was accidentally
+    introduced.
+
+ -- Brian Nelson <pyro@debian.org>  Sat, 05 Feb 2011 09:12:26 -0500
+
 aspell (0.60.6-5) unstable; urgency=low
 
   * Added a grammatical fix for aspell.1 to 05_doc_fix.diff
