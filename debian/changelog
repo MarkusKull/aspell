@@ -2,8 +2,10 @@ aspell (0.60.6-6) UNRELEASED; urgency=low
 
   * Removed the debian-changes-0.60.6-5 patch which was accidentally
     introduced.
+  * Reverted the pkgdatadir change since it breaks filters
+    (Closes: #612051)
 
- -- Brian Nelson <pyro@debian.org>  Sat, 05 Feb 2011 09:12:26 -0500
+ -- Brian Nelson <pyro@debian.org>  Sat, 05 Feb 2011 09:41:55 -0500
 
 aspell (0.60.6-5) unstable; urgency=low
 

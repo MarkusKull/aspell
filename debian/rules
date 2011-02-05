@@ -8,7 +8,7 @@ DEB_DH_MAKESHLIBS_ARGS_ALL := -V'libaspell15 (>= 0.60)' -Xusr/lib/aspell
 
 DEB_DH_INSTALL_SOURCEDIR := debian/tmp
 DEB_INSTALL_CHANGELOGS_ALL := manual/aspell.html/ChangeLog.html
-DEB_CONFIGURE_EXTRA_FLAGS := --enable-pkgdatadir=/usr/share/aspell --enable-pkglibdir=/usr/lib/aspell
+DEB_CONFIGURE_EXTRA_FLAGS := --enable-pkgdatadir=/usr/lib/aspell --enable-pkglibdir=/usr/lib/aspell
 
 build/aspell-doc::
 	make -C manual aspell.html aspell-dev.html
