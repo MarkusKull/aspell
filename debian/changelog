@@ -1,11 +1,13 @@
-aspell (0.60.6-6) UNRELEASED; urgency=low
+aspell (0.60.6-6) unstable; urgency=low
 
   * Removed the debian-changes-0.60.6-5 patch which was accidentally
     introduced.
-  * Reverted the pkgdatadir change since it breaks filters
-    (Closes: #612051)
+  * Reverted the pkgdatadir change since it breaks filters.  The spell and
+    ispell scripts will just be left in /usr/lib/aspell, which is a
+    retarded place for them but, eh, it's just not worth fighting the
+    aspell build system over it.  (Closes: #612051)
 
- -- Brian Nelson <pyro@debian.org>  Sat, 05 Feb 2011 09:41:55 -0500
+ -- Brian Nelson <pyro@debian.org>  Sat, 05 Feb 2011 09:48:49 -0500
 
 aspell (0.60.6-5) unstable; urgency=low
 
