@@ -3,7 +3,7 @@
 ## Filter for Debian DDTP-emails
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -161,7 +161,8 @@
+@@ -170,7 +170,8 @@
    modules/filter/html-filter.info\
    modules/filter/context-filter.info\
    modules/filter/nroff-filter.info\
@@ -13,7 +13,7 @@
  
  ### Add all your aspell mode files ###
  fltfiles = \
-@@ -176,7 +177,8 @@
+@@ -185,7 +186,8 @@
    modules/filter/modes/url.amf \
    modules/filter/modes/comment.amf \
    modules/filter/modes/nroff.amf\
@@ -23,7 +23,7 @@
  
  if COMPILE_IN_FILTERS
  
-@@ -192,7 +194,8 @@
+@@ -201,7 +203,8 @@
    modules/filter/sgml.cpp\
    modules/filter/context.cpp\
    modules/filter/nroff.cpp\
@@ -33,7 +33,7 @@
  
  else # not COMPILE_IN_FILTERS
  
-@@ -203,7 +206,8 @@
+@@ -212,7 +215,8 @@
  ### must look like lib<filtername>-filter.la see development manual
  filter_LTLIBRARIES = debctrl-filter.la email-filter.la tex-filter.la\
  	             sgml-filter.la context-filter.la\
@@ -43,7 +43,7 @@
  
  debctrl_filter_la_SOURCES = modules/filter/debctrl.cpp
  debctrl_filter_la_LIBADD = libaspell.la 
-@@ -233,6 +237,10 @@
+@@ -242,6 +246,10 @@
  texinfo_filter_la_LIBADD = libaspell.la
  texinfo_filter_la_LDFLAGS  = ${filter_ldflags}
  

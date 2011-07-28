@@ -3,7 +3,7 @@
 ## 
 --- a/Makefile.am
 +++ b/Makefile.am
-@@ -154,6 +154,7 @@
+@@ -163,6 +163,7 @@
  
  ### Add the .info file your filter comes with
  optfiles = \
@@ -11,7 +11,7 @@
    modules/filter/email-filter.info\
    modules/filter/tex-filter.info\
    modules/filter/sgml-filter.info\
-@@ -167,6 +168,7 @@
+@@ -176,6 +177,7 @@
    modules/filter/modes/html.amf \
    modules/filter/modes/sgml.amf \
    modules/filter/modes/tex.amf \
@@ -19,7 +19,7 @@
    modules/filter/modes/email.amf \
    modules/filter/modes/ccpp.amf \
    modules/filter/modes/none.amf \
-@@ -184,6 +186,7 @@
+@@ -193,6 +195,7 @@
  ### starting with file containing filter class definition followed by
  ### file containing filter member implementation.
  libaspell_la_SOURCES +=\
@@ -27,7 +27,7 @@
    modules/filter/email.cpp\
    modules/filter/tex.cpp\
    modules/filter/sgml.cpp\
-@@ -198,10 +201,14 @@
+@@ -207,10 +210,14 @@
  
  ### Add name of filter library containing your filter. Name always
  ### must look like lib<filtername>-filter.la see development manual

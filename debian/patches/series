@@ -3,7 +3,5 @@
 03_ddtp_filter.diff
 04_gcc43_build_fix.diff
 05_doc_fix.diff
-06_null_input_segfault_fix.diff
 07_filter.diff
 10_autotools.diff
-11_special_chars.diff

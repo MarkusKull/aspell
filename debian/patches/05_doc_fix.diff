@@ -3,9 +3,9 @@
 ## Document output format "-" for run-together in pipe mode
 --- a/manual/aspell.texi
 +++ b/manual/aspell.texi
-@@ -2310,6 +2310,10 @@
- colon, another space, and a list of the suggestions separated by
- commas and spaces.
+@@ -2319,6 +2319,10 @@
+ is a combination of two words in the dictionary, then it prints a single
+ @samp{-} in one line.
  
 +If you set the option @command{run-together} and Aspell thinks this word
 +is a combination of two words in the dictionary, then it prints a single
