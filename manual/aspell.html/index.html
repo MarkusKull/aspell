@@ -1,8 +1,8 @@
 <html lang="en">
 <head>
-<title>GNU Aspell 0.60.6</title>
+<title>GNU Aspell 0.60.7-pre</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="Aspell 0.60.6 spell checker user's manual.">
+<meta name="description" content="Aspell 0.60.7-pre spell checker user's manual.">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="#Top">
 <link href="http://www.gnu.org/software/texinfo/" rel="generator-home" title="Texinfo Homepage">
@@ -12,7 +12,7 @@ This is the user's manual for Aspell
 GNU Aspell is a spell checker designed to eventually replace Ispell.
 It can either be used as a library or as an independent spell checker.
 
-Copyright (C) 2000-2006 Kevin Atkinson.
+Copyright (C) 2000-2011 Kevin Atkinson.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -35,11 +35,11 @@ Copyright (C) 2000-2006 Kevin Atkinson.
 --></style>
 </head>
 <body>
-<h1 class="settitle">GNU Aspell 0.60.6</h1>
+<h1 class="settitle">GNU Aspell 0.60.7-pre</h1>
    <div class="contents">
 <h2>Table of Contents</h2>
 <ul>
-<li><a name="toc_Top" href="index.html#Top">GNU Aspell 0.60.6</a>
+<li><a name="toc_Top" href="index.html#Top">GNU Aspell 0.60.7-pre</a>
 <li><a name="toc_Introduction" href="Introduction.html#Introduction">1 Introduction</a>
 <ul>
 <li><a href="Introduction.html#Introduction">1.1 Comparison to other spell checker engines</a>
@@ -261,25 +261,26 @@ Copyright (C) 2000-2006 Kevin Atkinson.
 <li><a href="Curses-Notes.html#Curses-Notes">E.3.1 Unicode Support</a>
 </li></ul>
 <li><a href="Loadable-Filter-Notes.html#Loadable-Filter-Notes">E.4 Loadable Filter Notes</a>
-<li><a href="Upgrading-from-Aspell-0_002e50.html#Upgrading-from-Aspell-0_002e50">E.5 Upgrading from Aspell 0.50</a>
+<li><a href="Using-32_002dBit-Dictionaries-on-a-64_002dBit-System.html#Using-32_002dBit-Dictionaries-on-a-64_002dBit-System">E.5 Using 32-Bit Dictionaries on a 64-Bit System</a>
+<li><a href="Upgrading-from-Aspell-0_002e50.html#Upgrading-from-Aspell-0_002e50">E.6 Upgrading from Aspell 0.50</a>
 <ul>
-<li><a href="Upgrading-from-Aspell-0_002e50.html#Upgrading-from-Aspell-0_002e50">E.5.1 Binary Compatibility</a>
+<li><a href="Upgrading-from-Aspell-0_002e50.html#Upgrading-from-Aspell-0_002e50">E.6.1 Binary Compatibility</a>
 </li></ul>
-<li><a href="Upgrading-from-Aspell-_002e33_002fPspell-_002e12.html#Upgrading-from-Aspell-_002e33_002fPspell-_002e12">E.6 Upgrading from Aspell .33/Pspell .12</a>
-<li><a href="Upgrading-from-a-Pre_002d0_002e50-snapshot.html#Upgrading-from-a-Pre_002d0_002e50-snapshot">E.7 Upgrading from a Pre-0.50 snapshot</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8 WIN32 Notes</a>
+<li><a href="Upgrading-from-Aspell-_002e33_002fPspell-_002e12.html#Upgrading-from-Aspell-_002e33_002fPspell-_002e12">E.7 Upgrading from Aspell .33/Pspell .12</a>
+<li><a href="Upgrading-from-a-Pre_002d0_002e50-snapshot.html#Upgrading-from-a-Pre_002d0_002e50-snapshot">E.8 Upgrading from a Pre-0.50 snapshot</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9 WIN32 Notes</a>
 <ul>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.1 Getting the WIN32 version</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.2 Building the WIN32 version</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.1 Getting the WIN32 version</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.2 Building the WIN32 version</a>
 <ul>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.2.1 Building Aspell using Cygwin</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.2.2 Building Aspell using MinGW</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.2.3 Building Aspell without using Cygwin or MSYS</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.2.1 Building Aspell using Cygwin</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.2.2 Building Aspell using MinGW</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.2.3 Building Aspell without using Cygwin or MSYS</a>
 </li></ul>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.3 (PD)Curses</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.4 Directories</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.5 Installer</a>
-<li><a href="WIN32-Notes.html#WIN32-Notes">E.8.6 WIN32 consoles</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.3 (PD)Curses</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.4 Directories</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.5 Installer</a>
+<li><a href="WIN32-Notes.html#WIN32-Notes">E.9.6 WIN32 consoles</a>
 </li></ul>
 </li></ul>
 <li><a name="toc_ChangeLog" href="ChangeLog.html#ChangeLog">Appendix F ChangeLog</a>
@@ -309,7 +310,7 @@ Up:&nbsp;<a rel="up" accesskey="u" href="../index.html#dir">(dir)</a>
 <hr>
 </div>
 
-<h2 class="unnumbered">GNU Aspell 0.60.6</h2>
+<h2 class="unnumbered">GNU Aspell 0.60.7-pre</h2>
 
 <p>This is the user's manual for Aspell
 

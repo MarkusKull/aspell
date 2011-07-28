@@ -135,6 +135,13 @@
 /* Define to 1 if you have the ANSI C header files. */
 #undef STDC_HEADERS
 
+/* Defined to term header file */
+#undef TERM_HEADER
+
+/* Defined if 32-bit hash function should be used for compiled dictionaries.
+   */
+#undef USE_32_BIT_HASH_FUN
+
 /* Defined if file ino is supported */
 #undef USE_FILE_INO
 

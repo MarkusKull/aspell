@@ -1,8 +1,8 @@
 <html lang="en">
 <head>
-<title>ChangeLog - GNU Aspell 0.60.6</title>
+<title>ChangeLog - GNU Aspell 0.60.7-pre</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="Aspell 0.60.6 spell checker user's manual.">
+<meta name="description" content="Aspell 0.60.7-pre spell checker user's manual.">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="prev" href="Installing.html#Installing" title="Installing">
@@ -14,7 +14,7 @@ This is the user's manual for Aspell
 GNU Aspell is a spell checker designed to eventually replace Ispell.
 It can either be used as a library or as an independent spell checker.
 
-Copyright (C) 2000--2006 Kevin Atkinson.
+Copyright (C) 2000--2011 Kevin Atkinson.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -48,6 +48,39 @@ Up:&nbsp;<a rel="up" accesskey="u" href="index.html#Top">Top</a>
 
 <h2 class="appendix">Appendix F ChangeLog</h2>
 
+<h3 class="heading">Changes from 0.60.6.1 to 0.60.7 (??, 2011)</h3>
+
+     <ul>
+<li>Add partial support for recognizing the Unicode apostrophe (') in
+words.  In particular Aspell will accept the Unicode apostrophe when
+the language uses an ISO Latin charset that doesn't already have a
+Unicode apostrophe.  For now, Aspell will still use the ASCII version
+in suggestions. 
+<li>Detect when a dictionary compiled on a 32-bit machine is used on a
+64-bit one (and vise versa), as due to an oversight, compiled
+dictionaries depend on more than the endianness.  Also added a compile
+time option to remove this dependency, but at the cost of breaking
+compatibility with already compiled dictionaries on 64-bit systems. 
+<li>Fix a bug which caused Aspell to crash when passing in a null string
+to almost any of the C API functions.  This should not happen if the
+size is also zero as the pointer should never be derefrenced. 
+<li>In addition to outputting a warning when building with NDEBUG defined,
+also include NDEBUG in the version string. 
+<li>Other minor updates and bug fixes. 
+</ul>
+
+<h3 class="heading">Changes from 0.60.6 to 0.60.6.1 (July 4, 2011)</h3>
+
+     <ul>
+<li>Update to Automake 1.10.3
+<li>Fix a bug which caused a race condition (leading to a likely crash)
+when two threads try to update the dictionary cache at the same time. 
+<li>Make it very clear that compiling Aspell with NDEBUG is a bad idea
+(see <a href="http://aspell.net/ndebug.html">http://aspell.net/ndebug.html</a>) by outputting a
+warning when building with NDEBUG defined. 
+<li>Numerous other minor updates and bug fixes. 
+</ul>
+
 <h3 class="heading">Changes from 0.60.5 to 0.60.6 (April 16, 2007)</h3>
 
      <ul>
@@ -64,7 +97,7 @@ the potential for it to be used interactively through a pipe.
 <h3 class="heading">Changes from 0.60.4 to 0.60.5 (December 18, 2006)</h3>
 
      <ul>
-<li>Compile fix for gcc 4.1
+<li>Compile fix for Gcc 4.1
 <li>Updated to Gettext 0.16.1, Libtool 1.5.22, Automake 1.10, Autoconf 2.61
 <li>Documentation improvements, including an updated <samp><span class="command">man</span></samp> page. 
 <li>Complain if more than one file is specified when checking files using
