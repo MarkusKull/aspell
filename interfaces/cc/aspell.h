@@ -185,6 +185,13 @@ int aspell_config_retrieve_int(struct AspellConfig * ths, const char * key);
 
 
 
+/******************************* version *******************************/
+
+
+/* Returns a version string, which may include additional
+ * information on how Aspell was compiled. */
+const char * aspell_version_string();
+
 /******************************** error ********************************/
 
 

@@ -1,8 +1,8 @@
 <html lang="en">
 <head>
-<title>WIN32 Notes - GNU Aspell 0.60.6</title>
+<title>WIN32 Notes - GNU Aspell 0.60.7-pre</title>
 <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1">
-<meta name="description" content="Aspell 0.60.6 spell checker user's manual.">
+<meta name="description" content="Aspell 0.60.7-pre spell checker user's manual.">
 <meta name="generator" content="makeinfo 4.8">
 <link title="Top" rel="start" href="index.html#Top">
 <link rel="up" href="Installing.html#Installing" title="Installing">
@@ -14,7 +14,7 @@ This is the user's manual for Aspell
 GNU Aspell is a spell checker designed to eventually replace Ispell.
 It can either be used as a library or as an independent spell checker.
 
-Copyright (C) 2000--2006 Kevin Atkinson.
+Copyright (C) 2000--2011 Kevin Atkinson.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -45,16 +45,16 @@ Up:&nbsp;<a rel="up" accesskey="u" href="Installing.html#Installing">Installing<
 <hr>
 </div>
 
-<h3 class="appendixsec">E.8 WIN32 Notes</h3>
+<h3 class="appendixsec">E.9 WIN32 Notes</h3>
 
-<h4 class="appendixsubsec">E.8.1 Getting the WIN32 version</h4>
+<h4 class="appendixsubsec">E.9.1 Getting the WIN32 version</h4>
 
 <p>The latest version of the native Aspell/WIN32 port, including
 binaries, can be found at <a href="http://aspell.net/win32">http://aspell.net/win32</a>.  This page
 has, unfortunately, not been updated for Aspell 0.60.  If you are
 interested in updated the native port please let me know.
 
-<h4 class="appendixsubsec">E.8.2 Building the WIN32 version</h4>
+<h4 class="appendixsubsec">E.9.2 Building the WIN32 version</h4>
 
 <p>There are two basically different ways of building Aspell using GCC
 for WIN32: You can either use the Cygwin compiler, which will produce
@@ -67,7 +67,7 @@ from Microsoft (MSVCRT.DLL).
 <!-- Aspell libraries using a native WIN32 compiler (e.g.  MS Visual C++), -->
 <!-- you will need the MinGW built ones to avoid problems caused by the -->
 <!-- different runtime libraries. -->
-<h5 class="appendixsubsubsec">E.8.2.1 Building Aspell using Cygwin</h5>
+<h5 class="appendixsubsubsec">E.9.2.1 Building Aspell using Cygwin</h5>
 
 <p>This works exactly like on other POSIX
 compatible systems using the `<samp><span class="samp">./configure &amp;&amp; make &amp;&amp; make install</span></samp>'
@@ -76,25 +76,25 @@ by an incorrect <samp><span class="file">libstdc++.la</span></samp> in the <samp
 After removing or renaming this file, the build progress should work
 (GCC-2.95 and GCC-3.x should work).
 
-<h5 class="appendixsubsubsec">E.8.2.2 Building Aspell using MinGW</h5>
+<h5 class="appendixsubsubsec">E.9.2.2 Building Aspell using MinGW</h5>
 
 <p>There are several different ways to build Aspell using MinGW.  The
 easiest way is to use a Cygwin compiler but instruct it to build a
 native binary rather than a Cygwin one.  To do this configure with:
 
-<pre class="example">     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygswin'
+<pre class="example">     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygwin'
 </pre>
    <p>You may also want to add the option
 <samp><span class="option">--enable-win32-relocatable</span></samp> to use more windows friendly
 directories.  See <a href="Win32_002dDirectories.html#Win32_002dDirectories">Win32-Directories</a>.  In this case configure with:
 
-<pre class="smallexample">     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygswin' --enable-win32-relocatable
+<pre class="smallexample">     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygwin' --enable-win32-relocatable
 </pre>
    <p>It should also be possible to build Aspell using the MSYS environment. 
 But this has not been very well tested.  If building with MSYS
 <em>do not</em> add `<samp><span class="samp">CFLAGS ...</span></samp>' to configure.
 
-<h5 class="appendixsubsubsec">E.8.2.3 Building Aspell without using Cygwin or MSYS</h5>
+<h5 class="appendixsubsubsec">E.9.2.3 Building Aspell without using Cygwin or MSYS</h5>
 
 <p>It is also possible to build Aspell without Cygwin of MinGW by using
 the files in the <samp><span class="file">win32/</span></samp> subdirectory.  However, these files
@@ -143,7 +143,7 @@ available at <a href="ftp://ftp.gnu.org/gnu/aspell">ftp://ftp.gnu.org/gnu/aspell
 of changes to the Aspell sources.  It has also been reported that the
 Intel C++ compiler can be used for compilation.
 
-<h4 class="appendixsubsec">E.8.3 (PD)Curses</h4>
+<h4 class="appendixsubsec">E.9.3 (PD)Curses</h4>
 
 <p>In order to get the nice full screen interface when spell checking
 files, a curses implementation that does not require Cygwin is
@@ -168,7 +168,7 @@ for those purposes.
 
    <p><a name="Win32_002dDirectories"></a>
 
-<h4 class="appendixsubsec">E.8.4 Directories</h4>
+<h4 class="appendixsubsec">E.9.4 Directories</h4>
 
 <p>If Aspell is configured with <samp><span class="option">--enable-win32-relocatable</span></samp> or
 compiled with <samp><span class="option">WIN32_RELOCATABLE=1</span></samp> when using a Makefile, it
@@ -179,7 +179,7 @@ the <samp><var>prefix</var></samp> directory with their names changed from
 <samp><span class="file">.aspell.</span><var>lang</var><span class="file">.*</span></samp> to <samp><var>lang</var><span class="file">.*</span></samp> (you can override
 the path by setting the <samp><span class="env">HOME</span></samp> environment variable).
 
-<h4 class="appendixsubsec">E.8.5 Installer</h4>
+<h4 class="appendixsubsec">E.9.5 Installer</h4>
 
 <p>The installer registers the DLLs as shared libraries, you should
 increase the reference counter to avoid the libraries being
@@ -192,7 +192,7 @@ located under:
 
 <pre class="example">     HKLM\SOFTWARE\Aspell
 </pre>
-   <h4 class="appendixsubsec">E.8.6 WIN32 consoles</h4>
+   <h4 class="appendixsubsec">E.9.6 WIN32 consoles</h4>
 
 <p>The console uses a different encoding than GUI applications, changing
 this to to a Windows encoding (e.g.  1252) is not supported on

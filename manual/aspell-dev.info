@@ -24,9 +24,7 @@ Notes
 *****
 
 This manual is designed for those who wish to develop Aspell.  It is
-currently very sketchy.  However, it should improve over time.  The
-latest version of this document can be found at
-`http://savannah.gnu.org/download/aspell/manual/devel/devel.html'.
+currently very sketchy.  However, it should improve over time.
 
 * Menu:
 
@@ -1750,37 +1748,37 @@ End:
 
 Tag Table:
 Node: Top712
-Node: Style Guidelines1370
-Node: How to Submit a Patch2114
-Node: C++ Standard Library2785
-Node: Templates3341
-Node: Error Handling3698
-Node: Source Code Layout4854
-Node: Strings5921
-Node: Smart Pointers7653
-Node: I/O9174
-Node: Config Class10055
-Node: Filter Interface10415
-Ref: Filter Overview10587
-Ref: Constructor Function15524
-Ref: Filter Description File16060
-Ref: Filter Default Values18209
-Ref: Programmer's Interface19871
-Ref: Recommended Standard Aspell19871
-Ref: Interface Macros22914
-Ref: Link Filters Static23022
-Ref: Place Sources23348
-Ref: Build Sources23710
-Ref: Reinstall Aspell23781
-Ref: Test Filter Installed23806
-Node: Filter Modes24236
-Node: Data Structures27848
-Node: Mk-Src Script29209
-Node: How It All Works38538
-Node: Part 1 - Compiled Dictionary Format39333
-Node: Part 2 - Quickly Finding Similar Soundslike42293
-Node: Part 348269
-Node: Copying48443
-Node: GNU Free Documentation License49019
+Node: Style Guidelines1250
+Node: How to Submit a Patch1994
+Node: C++ Standard Library2665
+Node: Templates3221
+Node: Error Handling3578
+Node: Source Code Layout4734
+Node: Strings5801
+Node: Smart Pointers7533
+Node: I/O9054
+Node: Config Class9935
+Node: Filter Interface10295
+Ref: Filter Overview10467
+Ref: Constructor Function15404
+Ref: Filter Description File15940
+Ref: Filter Default Values18089
+Ref: Programmer's Interface19751
+Ref: Recommended Standard Aspell19751
+Ref: Interface Macros22794
+Ref: Link Filters Static22902
+Ref: Place Sources23228
+Ref: Build Sources23590
+Ref: Reinstall Aspell23661
+Ref: Test Filter Installed23686
+Node: Filter Modes24116
+Node: Data Structures27728
+Node: Mk-Src Script29089
+Node: How It All Works38418
+Node: Part 1 - Compiled Dictionary Format39213
+Node: Part 2 - Quickly Finding Similar Soundslike42173
+Node: Part 348149
+Node: Copying48323
+Node: GNU Free Documentation License48899
 
 End Tag Table

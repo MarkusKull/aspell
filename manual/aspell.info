@@ -5,7 +5,7 @@ This is aspell.info, produced by makeinfo version 4.8 from aspell.texi.
    GNU Aspell is a spell checker designed to eventually replace Ispell.
 It can either be used as a library or as an independent spell checker.
 
-   Copyright (C) 2000-2006 Kevin Atkinson.
+   Copyright (C) 2000-2011 Kevin Atkinson.
 
      Permission is granted to copy, distribute and/or modify this
      document under the terms of the GNU Free Documentation License,
@@ -22,8 +22,8 @@ END-INFO-DIR-ENTRY
 
 File: aspell.info,  Node: Top,  Next: Introduction,  Up: (dir)
 
-GNU Aspell 0.60.6
-*****************
+GNU Aspell 0.60.7-pre
+*********************
 
 This is the user's manual for Aspell
 
@@ -1636,10 +1636,14 @@ beginning and end of a word like the "clean" command does. In addition
 the options `--dont-skip-invalid-words' and `--dont-clean-affixes' can
 be specified to turn the warnings into errors.
 
-   The compiled dictionary file are endian order dependent.  When a
-dictionary is loaded the endian order is checked.  Please do not
-distribute the compiled dictionaries unless you are only distributing
-them for a particular platform such as you would a binary.
+   The compiled dictionaries are platform dependent.  They depend on the
+endian order and (unless compiled with the `--enable-32-bit-hash-fun'
+option) the size of the `size_t' type as it used in the hash function;
+this type is generally different on 32 and 64-bit systems.  When a
+dictionary is loaded the endian order and compatibility of the hash
+function is checked.  Please do not distribute the compiled
+dictionaries unless you are only distributing them for a particular
+platform such as you would a binary.
 
    Aspell is now also able to use special `multi' dictionaries.  for
 more information *Note How Aspell Selects an Appropriate Dictionary::.
@@ -2079,6 +2083,10 @@ the line contains an `&', a space, the misspelled word, a space, the
 number of near misses, the number of characters between the beginning
 of the line and the beginning of the misspelled word, a colon, another
 space, and a list of the suggestions separated by commas and spaces.
+
+   If you set the option `run-together' and Aspell thinks this word is
+a combination of two words in the dictionary, then it prints a single
+`-' in one line.
 
    Finally, if the word does not appear in the dictionary, and there are
 no suggestions, then the line contains a `#', a space, the misspelled
@@ -4338,6 +4346,7 @@ order to build.  Aspell also uses a few POSIX functions when necessary.
 * HTML Manuals and "make clean"::
 * Curses Notes::
 * Loadable Filter Notes::
+* Using 32-Bit Dictionaries on a 64-Bit System::
 * Upgrading from Aspell 0.50::
 * Upgrading from Aspell .33/Pspell .12::
 * Upgrading from a Pre-0.50 snapshot::
@@ -4404,7 +4413,7 @@ If you are having problems compiling `check_funs.cpp' then the most
 likely reason is due to incompatibilities with the curses
 implementation on your system.  You should first try disabling the
 "wide" curses library by with the `--disable-wide-curses' configure
-option..  By doing so you will lose support for properly displaying
+option.  By doing so you will lose support for properly displaying
 UTF-8 characters but you may still be able to get the full screen
 interface.  If this fails than you can disable curses support
 altogether with the `--disable-curses' configure option.  By doing this
@@ -4439,7 +4448,7 @@ Although this function was defined in the ISO C89 standard (ANSI
 X3.159-1989), not all systems have it.
 
 
-File: aspell.info,  Node: Loadable Filter Notes,  Next: Upgrading from Aspell 0.50,  Prev: Curses Notes,  Up: Installing
+File: aspell.info,  Node: Loadable Filter Notes,  Next: Using 32-Bit Dictionaries on a 64-Bit System,  Prev: Curses Notes,  Up: Installing
 
 E.4 Loadable Filter Notes
 =========================
@@ -4454,9 +4463,30 @@ filters as individual modules by using the
 `./configure'.
 
 
-File: aspell.info,  Node: Upgrading from Aspell 0.50,  Next: Upgrading from Aspell .33/Pspell .12,  Prev: Loadable Filter Notes,  Up: Installing
+File: aspell.info,  Node: Using 32-Bit Dictionaries on a 64-Bit System,  Next: Upgrading from Aspell 0.50,  Prev: Loadable Filter Notes,  Up: Installing
 
-E.5 Upgrading from Aspell 0.50
+E.5 Using 32-Bit Dictionaries on a 64-Bit System
+================================================
+
+Due to an oversight, Aspell compiled dictionaries not only depend on
+the endian order, they also depend on the the size of the `size_t'
+type, which is generally different on 32 and 64-bit systems.  The
+`size_t' type is used in the hash function of the compiled
+dictionaries.  To force the hash function to use a 32-bit integer
+instead, use the `--enable-32-bit-hash-fun' configure option.  This
+option will allow you to use dictionaries compiled on a 32-bit machine
+on a 64-bit one as long as the endian order is the same.  Of course,
+dictionaries compiled on a 64-bit machine without this option enabled
+will no longer be usable.  If Aspell detects that an incompatible hash
+function is used, it will fail with:
+
+     Error: The file "SOME-FILE" is not in the proper format.
+     Incompatible hash function.
+
+
+File: aspell.info,  Node: Upgrading from Aspell 0.50,  Next: Upgrading from Aspell .33/Pspell .12,  Prev: Using 32-Bit Dictionaries on a 64-Bit System,  Up: Installing
+
+E.6 Upgrading from Aspell 0.50
 ==============================
 
 The dictionary format has changed so dictionaries will need to be
@@ -4479,7 +4509,7 @@ In addition the `ignore-accents' option is currently unimplemented.
    The flag `-l' is now a shortcut for `--lang', instead of `--list' as
 it was with Aspell 0.50.
 
-E.5.1 Binary Compatibility
+E.6.1 Binary Compatibility
 --------------------------
 
 The Aspell 0.60 library is binary compatible with the Aspell 0.50
@@ -4510,7 +4540,7 @@ only).
 
 File: aspell.info,  Node: Upgrading from Aspell .33/Pspell .12,  Next: Upgrading from a Pre-0.50 snapshot,  Prev: Upgrading from Aspell 0.50,  Up: Installing
 
-E.6 Upgrading from Aspell .33/Pspell .12
+E.7 Upgrading from Aspell .33/Pspell .12
 ========================================
 
 Aspell has undergone an extremely large number of changes since the
@@ -4563,7 +4593,7 @@ work with both the old Aspell/Pspell and the new GNU Aspell.
 
 File: aspell.info,  Node: Upgrading from a Pre-0.50 snapshot,  Next: WIN32 Notes,  Prev: Upgrading from Aspell .33/Pspell .12,  Up: Installing
 
-E.7 Upgrading from a Pre-0.50 snapshot
+E.8 Upgrading from a Pre-0.50 snapshot
 ======================================
 
 At the last minute I decided to merge the `speller-util' program into
@@ -4574,10 +4604,10 @@ to work with the snapshot will no longer work with the official release.
 
 File: aspell.info,  Node: WIN32 Notes,  Prev: Upgrading from a Pre-0.50 snapshot,  Up: Installing
 
-E.8 WIN32 Notes
+E.9 WIN32 Notes
 ===============
 
-E.8.1 Getting the WIN32 version
+E.9.1 Getting the WIN32 version
 -------------------------------
 
 The latest version of the native Aspell/WIN32 port, including binaries,
@@ -4585,7 +4615,7 @@ can be found at `http://aspell.net/win32'.  This page has,
 unfortunately, not been updated for Aspell 0.60.  If you are interested
 in updated the native port please let me know.
 
-E.8.2 Building the WIN32 version
+E.9.2 Building the WIN32 version
 --------------------------------
 
 There are two basically different ways of building Aspell using GCC for
@@ -4594,7 +4624,7 @@ binaries that depend on the POSIX layer in `cygwin1.dll'.  The other
 way is using MinGW GCC, those binaries use the native C runtime from
 Microsoft (MSVCRT.DLL).
 
-E.8.2.1 Building Aspell using Cygwin
+E.9.2.1 Building Aspell using Cygwin
 ....................................
 
 This works exactly like on other POSIX compatible systems using the
@@ -4603,26 +4633,26 @@ GCC will fail to link, this is caused by an incorrect `libstdc++.la' in
 the `/lib' directory.  After removing or renaming this file, the build
 progress should work (GCC-2.95 and GCC-3.x should work).
 
-E.8.2.2 Building Aspell using MinGW
+E.9.2.2 Building Aspell using MinGW
 ...................................
 
 There are several different ways to build Aspell using MinGW.  The
 easiest way is to use a Cygwin compiler but instruct it to build a
 native binary rather than a Cygwin one.  To do this configure with:
 
-     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygswin'
+     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygwin'
 
    You may also want to add the option `--enable-win32-relocatable' to
 use more windows friendly directories.  *Note Win32-Directories::.  In
 this case configure with:
 
-     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygswin' --enable-win32-relocatable
+     ./configure CFLAGS='-O2 -mno-cygwin' CXXFLAGS='-O2 -mno-cygwin' --enable-win32-relocatable
 
    It should also be possible to build Aspell using the MSYS
 environment.  But this has not been very well tested.  If building with
 MSYS _do not_ add `CFLAGS ...' to configure.
 
-E.8.2.3 Building Aspell without using Cygwin or MSYS
+E.9.2.3 Building Aspell without using Cygwin or MSYS
 ....................................................
 
 It is also possible to build Aspell without Cygwin of MinGW by using
@@ -4673,7 +4703,7 @@ available at `ftp://ftp.gnu.org/gnu/aspell', but it needs a lot of
 changes to the Aspell sources.  It has also been reported that the
 Intel C++ compiler can be used for compilation.
 
-E.8.3 (PD)Curses
+E.9.3 (PD)Curses
 ----------------
 
 In order to get the nice full screen interface when spell checking
@@ -4693,7 +4723,7 @@ specifying the location of the curses library and include file.
      `rxvt', `emacs') and will produce errors like `initscr() LINES=1
      COLS=1: too small'.  Use a non-curses version for those purposes.
 
-E.8.4 Directories
+E.9.4 Directories
 -----------------
 
 If Aspell is configured with `--enable-win32-relocatable' or compiled
@@ -4704,7 +4734,7 @@ be saved in the `PREFIX' directory with their names changed from
 `.aspell.LANG.*' to `LANG.*' (you can override the path by setting the
 `HOME' environment variable).
 
-E.8.5 Installer
+E.9.5 Installer
 ---------------
 
 The installer registers the DLLs as shared libraries, you should
@@ -4717,7 +4747,7 @@ uninstalling your program).  The reference counters are located under:
 
      HKLM\SOFTWARE\Aspell
 
-E.8.6 WIN32 consoles
+E.9.6 WIN32 consoles
 --------------------
 
 The console uses a different encoding than GUI applications, changing
@@ -4735,6 +4765,47 @@ File: aspell.info,  Node: ChangeLog,  Next: Authors,  Prev: Installing,  Up: Top
 
 Appendix F ChangeLog
 ********************
+
+Changes from 0.60.6.1 to 0.60.7 (??, 2011)
+==========================================
+
+   * Add partial support for recognizing the Unicode apostrophe (') in
+     words.  In particular Aspell will accept the Unicode apostrophe
+     when the language uses an ISO Latin charset that doesn't already
+     have a Unicode apostrophe.  For now, Aspell will still use the
+     ASCII version in suggestions.
+
+   * Detect when a dictionary compiled on a 32-bit machine is used on a
+     64-bit one (and vise versa), as due to an oversight, compiled
+     dictionaries depend on more than the endianness.  Also added a
+     compile time option to remove this dependency, but at the cost of
+     breaking compatibility with already compiled dictionaries on
+     64-bit systems.
+
+   * Fix a bug which caused Aspell to crash when passing in a null
+     string to almost any of the C API functions.  This should not
+     happen if the size is also zero as the pointer should never be
+     derefrenced.
+
+   * In addition to outputting a warning when building with NDEBUG
+     defined, also include NDEBUG in the version string.
+
+   * Other minor updates and bug fixes.
+
+Changes from 0.60.6 to 0.60.6.1 (July 4, 2011)
+==============================================
+
+   * Update to Automake 1.10.3
+
+   * Fix a bug which caused a race condition (leading to a likely crash)
+     when two threads try to update the dictionary cache at the same
+     time.
+
+   * Make it very clear that compiling Aspell with NDEBUG is a bad idea
+     (see `http://aspell.net/ndebug.html') by outputting a warning when
+     building with NDEBUG defined.
+
+   * Numerous other minor updates and bug fixes.
 
 Changes from 0.60.5 to 0.60.6 (April 16, 2007)
 ==============================================
@@ -4757,7 +4828,7 @@ Changes from 0.60.5 to 0.60.6 (April 16, 2007)
 Changes from 0.60.4 to 0.60.5 (December 18, 2006)
 =================================================
 
-   * Compile fix for gcc 4.1
+   * Compile fix for Gcc 4.1
 
    * Updated to Gettext 0.16.1, Libtool 1.5.22, Automake 1.10, Autoconf
      2.61
@@ -6877,86 +6948,87 @@ End:
 
 Tag Table:
 Node: Top827
-Node: Introduction3598
-Node: Support7424
-Node: Basic Usage7894
-Node: Spellchecking Individual Files8226
-Node: Using Aspell as a Replacement for Ispell11542
-Ref: Differences From Ispell13492
-Node: Using Aspell with other Applications17110
-Node: Customizing Aspell19494
-Node: Specifying Options20772
-Node: The Options26859
-Node: Dumping Configuration Values38276
-Node: Notes on Various Options38913
-Node: Notes on Various Filters and Filter Modes39246
-Node: Notes on the Prefix Option48175
-Node: Notes on Typo-Analysis49030
-Node: Notes on the Different Suggestion Modes51138
-Node: Working With Dictionaries53454
-Node: Using aspell-import54003
-Node: How Aspell Selects an Appropriate Dictionary54828
-Node: Listing Available Dictionaries56942
-Node: Dumping the Contents of the Word List57387
-Node: Creating an Individual Word List58000
-Node: Working With Affix Info in Word Lists61225
-Node: Format of the Personal and Replacement Dictionaries64904
-Ref: Format of the Personal Dictionary65209
-Node: Using Multi Dictionaries66611
-Node: Dictionary Naming67499
-Node: AWLI files68765
-Node: Writing programs to use Aspell69559
-Node: Through the C API70101
-Node: Through A Pipe77830
-Node: Notes on Storing Replacement Pairs82730
-Node: Adding Support For Other Languages84116
-Node: The Language Data File85060
-Ref: data-encoding86471
-Node: Compiling the Word List90721
-Node: Phonetic Code91176
-Node: The Simple Soundslike107187
-Node: Replacement Tables108421
-Node: Affix Compression109405
-Node: Controlling the Behavior of Run-together Words114702
-Node: Creating A New Character Set115630
-Node: Creating An Official Dictionary Package116865
-Node: Implementation Notes117597
-Node: Aspell Suggestion Strategy117879
-Node: Notes on 8-bit Characters120311
-Node: Languages Which Aspell can Support124159
-Node: Supported124761
-Node: Unsupported141702
-Node: Multiple Scripts145529
-Node: Planned Dictionaries146367
-Node: References150452
-Node: Language Related Issues151471
-Node: Compound Words152016
-Node: Words With Symbols in Them154961
-Node: Unicode Normalization158237
-Node: German Sharp S159187
-Node: Context Sensitive Spelling159851
-Node: To Do160439
-Node: Important Items160643
-Node: Other Items164933
-Node: Notes on Various Items166991
-Node: Word skipping by context167227
-Node: Hidden Markov Model169099
-Node: Email the Personal Dictionary169962
-Node: Installing171026
-Node: Generic Install Instructions172057
-Node: HTML Manuals and "make clean"173685
-Node: Curses Notes174228
-Node: Loadable Filter Notes176178
-Node: Upgrading from Aspell 0.50176817
-Ref: Binary Compatibility177924
-Node: Upgrading from Aspell .33/Pspell .12179475
-Node: Upgrading from a Pre-0.50 snapshot181987
-Node: WIN32 Notes182499
-Ref: Win32-Directories187639
-Node: ChangeLog189110
-Node: Authors226147
-Node: Copying228422
-Node: GNU Free Documentation License229490
-Node: GNU Lesser General Public License251929
+Node: Introduction3606
+Node: Support7432
+Node: Basic Usage7902
+Node: Spellchecking Individual Files8234
+Node: Using Aspell as a Replacement for Ispell11550
+Ref: Differences From Ispell13500
+Node: Using Aspell with other Applications17118
+Node: Customizing Aspell19502
+Node: Specifying Options20780
+Node: The Options26867
+Node: Dumping Configuration Values38284
+Node: Notes on Various Options38921
+Node: Notes on Various Filters and Filter Modes39254
+Node: Notes on the Prefix Option48183
+Node: Notes on Typo-Analysis49038
+Node: Notes on the Different Suggestion Modes51146
+Node: Working With Dictionaries53462
+Node: Using aspell-import54011
+Node: How Aspell Selects an Appropriate Dictionary54836
+Node: Listing Available Dictionaries56950
+Node: Dumping the Contents of the Word List57395
+Node: Creating an Individual Word List58008
+Node: Working With Affix Info in Word Lists61485
+Node: Format of the Personal and Replacement Dictionaries65164
+Ref: Format of the Personal Dictionary65469
+Node: Using Multi Dictionaries66871
+Node: Dictionary Naming67759
+Node: AWLI files69025
+Node: Writing programs to use Aspell69819
+Node: Through the C API70361
+Node: Through A Pipe78090
+Node: Notes on Storing Replacement Pairs83149
+Node: Adding Support For Other Languages84535
+Node: The Language Data File85479
+Ref: data-encoding86890
+Node: Compiling the Word List91140
+Node: Phonetic Code91595
+Node: The Simple Soundslike107606
+Node: Replacement Tables108840
+Node: Affix Compression109824
+Node: Controlling the Behavior of Run-together Words115121
+Node: Creating A New Character Set116049
+Node: Creating An Official Dictionary Package117284
+Node: Implementation Notes118016
+Node: Aspell Suggestion Strategy118298
+Node: Notes on 8-bit Characters120730
+Node: Languages Which Aspell can Support124578
+Node: Supported125180
+Node: Unsupported142121
+Node: Multiple Scripts145948
+Node: Planned Dictionaries146786
+Node: References150871
+Node: Language Related Issues151890
+Node: Compound Words152435
+Node: Words With Symbols in Them155380
+Node: Unicode Normalization158656
+Node: German Sharp S159606
+Node: Context Sensitive Spelling160270
+Node: To Do160858
+Node: Important Items161062
+Node: Other Items165352
+Node: Notes on Various Items167410
+Node: Word skipping by context167646
+Node: Hidden Markov Model169518
+Node: Email the Personal Dictionary170381
+Node: Installing171445
+Node: Generic Install Instructions172525
+Node: HTML Manuals and "make clean"174153
+Node: Curses Notes174696
+Node: Loadable Filter Notes176645
+Node: Using 32-Bit Dictionaries on a 64-Bit System177302
+Node: Upgrading from Aspell 0.50178367
+Ref: Binary Compatibility179497
+Node: Upgrading from Aspell .33/Pspell .12181048
+Node: Upgrading from a Pre-0.50 snapshot183560
+Node: WIN32 Notes184072
+Ref: Win32-Directories189210
+Node: ChangeLog190681
+Node: Authors229383
+Node: Copying231658
+Node: GNU Free Documentation License232726
+Node: GNU Lesser General Public License255165
 
 End Tag Table
