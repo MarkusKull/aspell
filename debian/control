@@ -3,7 +3,7 @@ Section: text
 Priority: optional
 Maintainer: Brian Nelson <pyro@debian.org>
 Build-Depends: debhelper (>= 7), libncursesw5-dev | libncurses-dev, cdbs (>= 0.4.0), texinfo
-Standards-Version: 3.9.1
+Standards-Version: 3.9.2
 Vcs-Git: git://git.debian.org/git/collab-maint/aspell
 Vcs-Browser: http://git.debian.org/?p=collab-maint/aspell.git
 Homepage: http://aspell.net/

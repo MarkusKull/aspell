@@ -1,11 +1,14 @@
-aspell (0.60.7~20110707-1~1.gbp05531c) UNRELEASED; urgency=low
+aspell (0.60.7~20110707-1) UNRELEASED; urgency=low
 
-  ** SNAPSHOT build @05531c6ea1218ba7464f504a7e325ab22443a14c **
+  * New upstream snapshot 0.60.7-20110707
+    - Removed 06_null_input_segfault_fix and 11_special_chars patches as
+      they've been applied upstream
+    - Fixes unexpected Ctrl-C quits program (Closes: #600214)
+    - Partial support for recognizing the Unicode apostrophe
+      (Closes: #533378)
+  * Updated policy to 3.9.2, no changes necessary
 
-  * removed obsolete line from debian/rules
-  * Imported Upstream version 0.60.7~20110707
-
- -- Brian Nelson <pyro@debian.org>  Wed, 27 Jul 2011 21:12:01 -0400
+ -- Brian Nelson <pyro@debian.org>  Wed, 27 Jul 2011 22:27:33 -0400
 
 aspell (0.60.6-6) unstable; urgency=low
 
