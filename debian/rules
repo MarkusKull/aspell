@@ -3,7 +3,7 @@
 include /usr/share/cdbs/1/rules/debhelper.mk
 include /usr/share/cdbs/1/class/autotools.mk
 
-DEB_DH_MAKESHLIBS_ARGS_ALL := -V'libaspell15 (>= 0.60.7)' -Xusr/lib/aspell
+DEB_DH_MAKESHLIBS_ARGS_ALL := -V'libaspell15 (>= 0.60.7~20110707)' -Xusr/lib/aspell
 
 DEB_DH_INSTALL_SOURCEDIR := debian/tmp
 DEB_INSTALL_CHANGELOGS_ALL := manual/aspell.html/ChangeLog.html
