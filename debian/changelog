@@ -8,7 +8,7 @@ aspell (0.60.7~20110707-1) UNRELEASED; urgency=low
       (Closes: #533378)
   * Updated policy to 3.9.2, no changes necessary
 
- -- Brian Nelson <pyro@debian.org>  Wed, 27 Jul 2011 22:27:33 -0400
+ -- Brian Nelson <pyro@debian.org>  Thu, 28 Jul 2011 22:54:37 -0400
 
 aspell (0.60.6-6) unstable; urgency=low
 
