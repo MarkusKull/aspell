@@ -1,3 +1,10 @@
+aspell (0.60.7~ui70+2) unstable; urgency=low
+
+  * Non-maintainer upload.
+  * Workaround for http://sourceforge.net/p/aspell/bugs/256/
+
+ -- Markus Kull <MarkusKull@users.noreply.github.com>  Mon, 14 Apr 2014 11:12:01 +0200
+
 aspell (0.60.7~20110707-1) unstable; urgency=low
 
   * New upstream snapshot 0.60.7-20110707
