@@ -796,11 +796,7 @@ bool AffixMgr::suffix_check (const LookupInfo & linf, ParmString word,
     if (se->check(linf, word, ci, gi, sfxopts, ppfx)) return true;
     se = se->next;
   }
-
-  if (word.size() == 0) {
-    return false;
-  }
-
+  
   // now handle the general case
   byte sp = *((const byte *)(word + word.size() - 1));
   SfxEntry * sptr = sStart[sp];
